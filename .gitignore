@@ -4,3 +4,5 @@ syntax: glob
 *.pyc
 *.DS_Store
 *.coverage*
+
+django_sticky_messages.egg-info
