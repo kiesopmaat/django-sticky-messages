@@ -10,6 +10,7 @@ setup(
     name = 'django-sticky-messages',
     version = '0.1',
     packages = ['stickymessages'],
+    install_requires = ['django-tinymce4-lite'],
     include_package_data = True,
     license = 'MIT',
     description = 'A simple Django app to display "sticky" messages that expire after a given time period.',
