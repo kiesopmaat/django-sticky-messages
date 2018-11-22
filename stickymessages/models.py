@@ -4,6 +4,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 
+from tinymce.models import HTMLField
+
 class MessageManager(models.Manager):
     def get_all_active(self):
         """
@@ -26,7 +28,7 @@ class Message(models.Model):
     Holds messages that will be displayed system wide.  We can use the active_datetime
     and the inactive_datetime to determine what active system message we would like to use.
     """
-    message = models.TextField()
+    message = HTMLField()
     active_datetime = models.DateTimeField(default=timezone.now)
     inactive_datetime = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(default=timezone.now)
