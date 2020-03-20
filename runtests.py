@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 import sys
+
+import django
 from django.conf import settings
 from django.core.management import call_command
+from django.test.runner import DiscoverRunner
 
 if not settings.configured:
     settings.configure(
@@ -20,12 +23,13 @@ if not settings.configured:
         ),
         ROOT_URLCONF=None,
         USE_TZ=True,
-        SECRET_KEY='mysecretkey'
-    )
+        SECRET_KEY='mysecretkey',
+        STATIC_URL='/'
+        )
 
+django.setup()
 
-from django.test.simple import DjangoTestSuiteRunner
-test_runner = DjangoTestSuiteRunner(verbosity=1)
+test_runner = DiscoverRunner(verbosity=1)
 failures = test_runner.run_tests(['stickymessages', ])
 if failures:
     sys.exit(failures)

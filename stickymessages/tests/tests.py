@@ -22,4 +22,4 @@ class MessageModelTests(TestCase):
         message.save()
         active_message = models.Message.objects.get_latest_active()
         self.assertIsInstance(active_message, models.Message)
-        self.assertEquals(active_message.message, 'This is an active message.')
+        self.assertEqual(active_message.message, 'This is an active message.')

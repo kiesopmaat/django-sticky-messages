@@ -2,7 +2,7 @@
   { "fields" : { "date_joined" : "2010-01-01T07:00:00-05:00",
         "email" : "user@test.com",
         "first_name" : "User",
-        "groups" : [ 1 ],
+        "groups" : [ ],
         "is_active" : true,
         "is_staff" : false,
         "is_superuser" : false,
