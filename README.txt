@@ -37,3 +37,8 @@ Quick start
 templates.
     NOTE: Template file uses bootstrap 'alert alert-block' classes for styling.
     You may create your own styling by using the sticky-message style.
+
+Changelog
+---------
+
+0.3: Include migrations via setup.py. Fixes crash during unittests where the auth tables aren't yet populated.

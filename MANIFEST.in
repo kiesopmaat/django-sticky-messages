@@ -1,3 +1,4 @@
 include LICENSE
+recursive-include stickymessages/migrations *
 recursive-include stickymessages/templates *
 recursive-include docs *
