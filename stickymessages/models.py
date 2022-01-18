@@ -1,8 +1,8 @@
-from django.utils import timezone
 
+from django.conf import settings
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.auth.models import User
 
 from tinymce.models import HTMLField
 
@@ -37,14 +37,14 @@ class Message(models.Model):
     created = models.DateTimeField(default=timezone.now)
     modified = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         on_delete=models.SET_NULL,
         verbose_name=_('Created by'),
         null=True,
         blank=True,
         related_name="%(app_label)s_%(class)s_related_created")
     modified_by = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         on_delete=models.SET_NULL,
         verbose_name=_('Modified by'),
         null=True,
