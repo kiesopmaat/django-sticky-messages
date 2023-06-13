@@ -3,7 +3,7 @@ Inform the admin site of objects that have an admin interface.  This is where we
 can set up objects to be managed through the admin interface.
 """
 from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from stickymessages import models
 
